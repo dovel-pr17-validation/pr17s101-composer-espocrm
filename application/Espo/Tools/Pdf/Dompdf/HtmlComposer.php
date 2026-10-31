@@ -44,7 +44,7 @@ use Picqer\Barcode\Exceptions\UnknownTypeException;
 use chillerlan\QRCode\QRCode;
 use chillerlan\QRCode\QROptions;
 use chillerlan\QRCode\Common\EccLevel;
-use chillerlan\QRCode\Output\QROutputInterface;
+use chillerlan\QRCode\Output\QRMarkupSVG;
 
 use RuntimeException;
 
@@ -264,7 +264,7 @@ class HtmlComposer
 
             // @todo Revise and test after updating the lib.
             /** @phpstan-ignore-next-line property.protected */
-            $options->outputType = QROutputInterface::MARKUP_SVG;
+            $options->outputInterface = QRMarkupSVG::class;
             /** @phpstan-ignore-next-line property.protected */
             $options->eccLevel = EccLevel::H;
 
